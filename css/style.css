@@ -39,7 +39,6 @@ a {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 section {
@@ -133,7 +132,7 @@ header {
 }
 
 .logo h1 {
-    font-size: 1.8rem;
+    font-size: 22px;
     color: var(--maroon);
     font-weight: 700;
 }
@@ -148,7 +147,7 @@ header {
 }
 
 .nav-links li {
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .nav-links a {
