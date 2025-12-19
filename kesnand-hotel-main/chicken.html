@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Specialties | Hotel Kesnand Village</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Lazy loading styles */
+        .lazy-img {
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        
+        .lazy-img.loaded {
+            opacity: 1;
+        }
+        
+        .menu-card-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-card-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--light-gray);
+            z-index: 1;
+            transition: opacity 2s ease-in-out;
+        ;
+        }
+        
+        .menu-card-img.loaded::after {
+            opacity: 0;
+        }
+        
+        /* Logo styling */
+        .logo a {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            transition: transform 2s ease-in-out;
+        }
+        
+        .logo img:hover {
+            transform: scale(1.05) ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                   <a href="./index.html"><img src="./images/kesnand hotel logo.png" alt="Hotel Kesnand Village Logo" width="90" height="90" loading="lazy"></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="veg-thali.html">Veg Thali</a></li>
+                    <li><a href="non-veg-thali.html">Non-Veg Thali</a></li>
+                    <li><a href="chicken.html" class="active">Chicken Specialties</a></li>
+                    <li><a href="mutton.html">Mutton Special</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Navigation -->
+    <div class="page-nav">
+        <div class="container">
+            <h1>Chicken Specialties</h1>
+            <p>Our signature chicken dishes prepared with authentic spices</p>
+        </div>
+    </div>
+
+    <!-- Chicken Specialties Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Chicken Specialties</h2>
+                <p>Delight in our signature chicken dishes prepared with authentic spices and traditional recipes</p>
+            </div>
+            
+            <div class="menu-grid">
+                <!-- Butter Chicken -->
+                <div class="menu-card">
+                    <div class="menu-card-img">
+                        <img 
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E" 
+                            data-src="./images/butter chicken.avif"
+                            alt="Butter Chicken"
+                            class="lazy-img"
+                            loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Butter Chicken</h3>
+                        <p>Tender chicken pieces cooked in a rich, creamy tomato gravy with aromatic spices. Served with naan or rice.</p>
+                        <div class="price">₹280</div>
+                        <div style="margin-top: 10px;">
+                            <span class="tag">Best Seller</span>
+                            <span class="tag">Spicy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chicken Biryani -->
+                <div class="menu-card">
+                    <div class="menu-card-img">
+                        <img 
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E" 
+                            data-src="https://j6e2i8c9.delivery.rocketcdn.me/wp-content/uploads/2020/09/Chicken-Biryani-Recipe-01-1-500x500.jpg" 
+                            alt="Chicken Biryani"
+                            class="lazy-img"
+                            loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Chicken Biryani</h3>
+                        <p>Fragrant basmati rice cooked with succulent chicken pieces, saffron, and a blend of aromatic spices.</p>
+                        <div class="price">₹220</div>
+                        <div style="margin-top: 10px;">
+                            <span class="tag">Hyderabadi Style</span>
+                            <span class="tag">Serves 2</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tandoori Chicken -->
+                <div class="menu-card">
+                    <div class="menu-card-img">
+                        <img 
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E" 
+                            data-src="https://theartisticcook.com/wp-content/uploads/2025/04/Chicken-Tangdi-Kebab-scaled.jpg" 
+                            alt="Tandoori Chicken"
+                            class="lazy-img"
+                            loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Tandoori Chicken</h3>
+                        <p>Chicken marinated in yogurt and spices, cooked in a traditional clay oven for a smoky flavor.</p>
+                        <div class="price">₹320</div>
+                        <div style="margin-top: 10px;">
+                            <span class="tag">Half - ₹180</span>
+                            <span class="tag">Tandoor Special</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chicken Tikka Masala -->
+                <div class="menu-card">
+                    <div class="menu-card-img">
+                        <img 
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E" 
+                            data-src="https://www.seriouseats.com/thmb/DbQHUK2yNCALBnZE-H1M2AKLkok=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicken-tikka-masala-for-the-grill-recipe-hero-2_1-cb493f49e30140efbffec162d5f2d1d7.JPG" 
+                            alt="Chicken Tikka Masala"
+                            class="lazy-img"
+                            loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Chicken Tikka Masala</h3>
+                        <p>Grilled chicken tikka pieces in a rich, creamy tomato and cashew gravy with special spices.</p>
+                        <div class="price">₹260</div>
+                        <div style="margin-top: 10px;">
+                            <span class="tag">Creamy</span>
+                            <span class="tag">Medium Spice</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chicken Korma -->
+                <div class="menu-card">
+                    <div class="menu-card-img">
+                        <img 
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E" 
+                            data-src="https://afghancooks.com/wp-content/uploads/2022/09/IMG-1912-jpg-scaled.jpg" 
+                            alt="Chicken Korma"
+                            class="lazy-img"
+                            loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Chicken Korma</h3>
+                        <p>Mild and creamy chicken curry made with yogurt, cream, and aromatic spices. Perfect for mild spice lovers.</p>
+                        <div class="price">₹240</div>
+                        <div style="margin-top: 10px;">
+                            <span class="tag">Mild</span>
+                            <span class="tag">Creamy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chicken Curry -->
+                <div class="menu-card">
+                    <div class="menu-card-img">
+                        <img 
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E" 
+                            data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQymwLzKtGTn9IsNa0iJBwMNTLTRDt0vn0E8A&s" 
+                            alt="Chicken Curry"
+                            class="lazy-img"
+                            loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Traditional Chicken Curry</h3>
+                        <p>Classic chicken curry cooked with onions, tomatoes, and traditional Indian spices. Served with rice or roti.</p>
+                        <div class="price">₹200</div>
+                        <div style="margin-top: 10px;">
+                            <span class="tag">Classic</span>
+                            <span class="tag">Spicy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chicken Kadhai -->
+                <div class="menu-card">
+                    <div class="menu-card-img">
+                        <img 
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E" 
+                            data-src="https://i.ytimg.com/vi/AJHP0yKqM4Y/maxresdefault.jpg" 
+                            alt="Chicken Kadhai"
+                            class="lazy-img"
+                            loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Chicken Kadhai</h3>
+                        <p>Chicken cooked in a traditional kadhai with bell peppers, onions, and freshly ground kadhai masala.</p>
+                        <div class="price">₹250</div>
+                        <div style="margin-top: 10px;">
+                            <span class="tag">Kadhai Special</span>
+                            <span class="tag">Medium Spice</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chicken 65 -->
+                <div class="menu-card">
+                    <div class="menu-card-img">
+                        <img 
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='%23999'%3ELoading...%3C/text%3E%3C/svg%3E" 
+                            data-src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/03/chicken-65-restaurant-style-500x375.jpg" 
+                            alt="Chicken 65"
+                            class="lazy-img"
+                            loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Chicken 65</h3>
+                        <p>Spicy, deep-fried chicken chunks marinated in a special blend of 65 spices. Perfect as a starter.</p>
+                        <div class="price">₹180</div>
+                        <div style="margin-top: 10px;">
+                            <span class="tag">Spicy</span>
+                            <span class="tag">Starter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Info -->
+    <section style="background-color: var(--light-gray);">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our Chicken Dishes</h2>
+                <p>What makes our chicken specialties exceptional</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Fresh Chicken</h3>
+                    <p>We use fresh, locally sourced chicken that is cleaned and prepared daily. Our chicken is always tender and cooked to perfection.</p>
+                    
+                    <h3>Secret Spice Blends</h3>
+                    <p>Our chefs prepare special spice blends in-house using traditional recipes. Each dish has its unique spice combination.</p>
+                    
+                    <h3>Traditional Cooking Methods</h3>
+                    <p>We use traditional cooking techniques including slow cooking, tandoor baking, and kadhai cooking to enhance flavors.</p>
+                    
+                    <h3>Customization Available</h3>
+                    <p>We can adjust spice levels according to your preference. Just let our staff know how spicy you like your food.</p>
+                </div>
+                <div class="about-img">
+                    <img src="images/Chicken specialties.avif" alt="chicken specialties">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Hotel Kesnand Village</h3>
+                    <p>A popular local hotel known for delicious veg and non-veg thali meals. We specialize in flavorful chicken and mutton dishes prepared with authentic spices and fresh ingredients.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="veg-thali.html">Veg Thali</a></li>
+                        <li><a href="non-veg-thali.html">Non-Veg Thali</a></li>
+                        <li><a href="chicken.html">Chicken Specialties</a></li>
+                        <li><a href="mutton.html">Mutton Special</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Kesnand Village, Pune District, Maharashtra</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> info@hotelkesnandvillage.com</li>
+                        <li><i class="fas fa-clock"></i> Open: 8:00 AM - 11:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Hotel Kesnand Village. All rights reserved. | Created by Maxxzoom</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Enhanced lazy loading with Intersection Observer
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lazy loading for images
+            const lazyImages = document.querySelectorAll('img.lazy-img');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            const src = img.getAttribute('data-src');
+                            
+                            if (src) {
+                                img.src = src;
+                                img.classList.add('loaded');
+                                
+                                // Add loaded class to parent container
+                                const parentContainer = img.closest('.menu-card-img, .about-img');
+                                if (parentContainer) {
+                                    parentContainer.classList.add('loaded');
+                                }
+                                
+                                // Remove data-src attribute
+                                img.removeAttribute('data-src');
+                                
+                                // Stop observing
+                                observer.unobserve(img);
+                            }
+                        }
+                    });
+                }, {
+                    rootMargin: '50px 0px',
+                    threshold: 0.1
+                });
+                
+                lazyImages.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            } else {
+                // Fallback for older browsers
+                lazyImages.forEach(img => {
+                    const src = img.getAttribute('data-src');
+                    if (src) {
+                        img.src = src;
+                        img.classList.add('loaded');
+                        
+                        const parentContainer = img.closest('.menu-card-img, .about-img');
+                        if (parentContainer) {
+                            parentContainer.classList.add('loaded');
+                        }
+                    }
+                });
+            }
+            
+            // Add error handling for images
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', function() {
+                    console.error('Image failed to load:', this.src);
+                    // You can set a placeholder image here if needed
+                    // this.src = 'path/to/placeholder.jpg';
+                });
+            });
+            
+            // Preload important images
+            function preloadImage(url) {
+                const img = new Image();
+                img.src = url;
+            }
+            
+            // Preload first few images for better UX
+            const firstImages = document.querySelectorAll('img[data-src]');
+            if (firstImages.length > 0) {
+                preloadImage(firstImages[0].getAttribute('data-src'));
+                if (firstImages.length > 1) {
+                    preloadImage(firstImages[1].getAttribute('data-src'));
+                }
+            }
+        });
+    </script>
+</body>
+</html>

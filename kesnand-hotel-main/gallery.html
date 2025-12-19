@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Hotel Kesnand Village</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tag {
+            display: inline-block;
+            background-color: var(--light-gold);
+            color: var(--dark-brown);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .gallery-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .category-btn {
+            padding: 10px 20px;
+            background-color: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--gold);
+            color: var(--dark-brown);
+        }
+        
+        .gallery-item {
+            cursor: pointer;
+        }
+        
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        .lightbox-prev {
+            left: 30px;
+        }
+        
+        .lightbox-next {
+            right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                  <a href="./index.html"><img src="./images/kesnand hotel logo.png" alt="" width="90px"></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="veg-thali.html">Veg Thali</a></li>
+                    <li><a href="non-veg-thali.html">Non-Veg Thali</a></li>
+                    <li><a href="chicken.html">Chicken Specialties</a></li>
+                    <li><a href="mutton.html">Mutton Special</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Navigation -->
+    <div class="page-nav">
+        <div class="container">
+            <h1>Gallery</h1>
+            <p>A visual journey through our food, ambiance, and happy customers</p>
+        </div>
+    </div>
+
+    <!-- Gallery Carousel -->
+    <section class="page-content">
+        <div class="container">
+            <div class="gallery-carousel">
+                <div class="carousel">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide active">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" alt="Delicious Thali">
+                        <div class="carousel-overlay">
+                            <h2>Our Signature Thali</h2>
+                            <p>Experience the complete Indian meal with our specially curated thali</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1481&q=80" alt="Chicken Specialties">
+                        <div class="carousel-overlay">
+                            <h2>Chicken Specialties</h2>
+                            <p>Our most popular chicken dishes prepared with authentic spices</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mutton Dishes">
+                        <div class="carousel-overlay">
+                            <h2>Mutton Delicacies</h2>
+                            <p>Traditional mutton dishes slow-cooked to perfection</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Restaurant Ambiance">
+                        <div class="carousel-overlay">
+                            <h2>Our Ambiance</h2>
+                            <p>Comfortable and welcoming atmosphere for dining</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Navigation -->
+                    <button class="carousel-btn carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    
+                    <!-- Carousel Dots -->
+                    <div class="carousel-dots">
+                        <div class="carousel-dot active" data-slide="0"></div>
+                        <div class="carousel-dot" data-slide="1"></div>
+                        <div class="carousel-dot" data-slide="2"></div>
+                        <div class="carousel-dot" data-slide="3"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Categories -->
+            <div class="gallery-categories">
+                <button class="category-btn active" data-category="all">All Photos</button>
+                <button class="category-btn" data-category="thali">Thali Meals</button>
+                <button class="category-btn" data-category="chicken">Chicken Dishes</button>
+                <button class="category-btn" data-category="mutton">Mutton Dishes</button>
+                <button class="category-btn" data-category="restaurant">Restaurant</button>
+                <button class="category-btn" data-category="events">Events</button>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Thali Images -->
+                <div class="gallery-item" data-category="thali">
+                    <img src="https://images.raasakarts.com/insecure/fit/1000/1000/ce/0/plain/https://rasakart-assets.s3.ap-south-1.amazonaws.com/3fa229/prods/RCmO3F6kjvFypIDqKg1eBdOtmxh2nOSUVx0wRABo.jpg@webp" alt="North Indian Thali">
+                </div>
+                <div class="gallery-item" data-category="thali">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUH9LsHFAOydUf2uDjZ7W5WlSAXP3tFC45-Q&s" alt="South Indian Thali">
+                </div>
+                <div class="gallery-item" data-category="thali">
+                    <img src="https://i.ytimg.com/vi/7dLE0oraTF0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBw9lgGUqANLQvwbgqtoKK-U1Cuig" alt="Non-Veg Thali">
+                </div>
+                
+                <!-- Chicken Images -->
+                <div class="gallery-item" data-category="chicken">
+                    <img src="https://i.ytimg.com/vi/AJHP0yKqM4Y/maxresdefault.jpg" alt="Butter Chicken">
+                </div>
+                <div class="gallery-item" data-category="chicken">
+                    <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/03/chicken-65-restaurant-style-500x375.jpg" alt="Chicken Biryani">
+                </div>
+                <div class="gallery-item" data-category="chicken">
+                    <img src="https://img.freepik.com/premium-photo/special-chicken-thali-food-platter-consists-variety-veggieschicken-meat-lentilsrice-sweet-dish-snacks-etc-selective-focus_726363-556.jpg" alt="Tandoori Chicken">
+                </div>
+
+                <div class="gallery-item" data-category="chicken">
+                    <img src="https://lh3.googleusercontent.com/proxy/3M5fKmqCsyKjF6vxj75sFkYj29l2DoKJWbBFGph1eBeygd59_flsuVtof6fZVbiO_sB4a0Wz63Nrb0qKLt1q-8zg-t5LYWcBQA" alt="Chicken lolipop">
+                </div>
+                
+                <!-- Mutton Images -->
+                <div class="gallery-item" data-category="mutton">
+                    <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mutton Rogan Josh">
+                </div>
+                <div class="gallery-item" data-category="mutton">
+                    <img src="https://i.ytimg.com/vi/-KbBMYKbmGY/maxresdefault.jpg" alt="Mutton Curry">
+                </div>
+
+                <div class="gallery-item" data-category="Egg">
+                    <img src="https://img.freepik.com/premium-photo/egg-thali-from-indian-cuisine-food-platter-consists-boiled-egg-curry-lentilsrice-curd-onions-selective-focus_726363-585.jpg" alt="Egg Curry">
+                </div>
+                
+                <!-- Restaurant Images -->
+                <div class="gallery-item" data-category="restaurant">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Restaurant Interior">
+                </div>
+                <div class="gallery-item" data-category="restaurant">
+                    <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Dining Area">
+                </div>
+                <div class="gallery-item" data-category="restaurant">
+                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Kitchen Preparation">
+                </div>
+                
+                <!-- Events Images -->
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Family Dining">
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Celebration">
+                </div>
+                <div class="gallery-item" data-category="events">
+                    <img src="https://b.zmtcdn.com/data/pictures/2/21068032/9cc5381bd36357e68b0ed3b6c971b677_featured_v2.jpg" alt="Celebration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="lightbox-close"><i class="fas fa-times"></i></div>
+        <div class="lightbox-nav lightbox-prev"><i class="fas fa-chevron-left"></i></div>
+        <div class="lightbox-nav lightbox-next"><i class="fas fa-chevron-right"></i></div>
+        <img class="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Hotel Kesnand Village</h3>
+                    <p>A popular local hotel known for delicious veg and non-veg thali meals. We specialize in flavorful chicken and mutton dishes prepared with authentic spices and fresh ingredients.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="veg-thali.html">Veg Thali</a></li>
+                        <li><a href="non-veg-thali.html">Non-Veg Thali</a></li>
+                        <li><a href="chicken.html">Chicken Specialties</a></li>
+                        <li><a href="mutton.html">Mutton Special</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Kesnand Village, Pune District, Maharashtra</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> info@hotelkesnandvillage.com</li>
+                        <li><i class="fas fa-clock"></i> Open: 8:00 AM - 11:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Hotel Kesnand Village. All rights reserved. | Created by Maxxzoom</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Gallery Filtering
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const category = button.getAttribute('data-category');
+                
+                // Show/hide gallery items based on category
+                galleryItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Lightbox functionality
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-img');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const lightboxPrev = document.querySelector('.lightbox-prev');
+        const lightboxNext = document.querySelector('.lightbox-next');
+        const galleryImages = document.querySelectorAll('.gallery-item img');
+        let currentImageIndex = 0;
+        
+        // Open lightbox when clicking on gallery image
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close lightbox when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Navigate lightbox images
+        function showLightboxImage(index) {
+            const images = Array.from(galleryImages);
+            if (index >= images.length) index = 0;
+            if (index < 0) index = images.length - 1;
+            
+            currentImageIndex = index;
+            lightboxImg.src = images[index].src;
+        }
+        
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showLightboxImage(currentImageIndex - 1);
+        });
+        
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showLightboxImage(currentImageIndex + 1);
+        });
+        
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else if (e.key === 'ArrowLeft') {
+                showLightboxImage(currentImageIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+                showLightboxImage(currentImageIndex + 1);
+            }
+        });
+    </script>
+</body>
+</html>
